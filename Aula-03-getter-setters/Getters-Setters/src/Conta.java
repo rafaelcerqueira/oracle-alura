@@ -28,18 +28,36 @@ public class Conta {
         }
     }
 
-    public void transfere(double valor, Conta destino) {
-        if (this.saldo > 0) {
-            if(valor <= this.saldo) {
-                this.saldo -= valor;
-                System.out.println("Transferência realizada com sucesso! Seu novo saldo é de R$ " + this.saldo);
+    public void transfere(double valor, Conta destino, Conta origem) {
+
+        int agenciaDaContaDestino = destino.agencia;
+        int numeroDaContaDestino = destino.numero;
+
+        int agenciaDaContaOrigem, numeroDaContaOrigem;
+        agenciaDaContaOrigem = origem.agencia;
+        numeroDaContaOrigem = origem.numero;
+
+        if(agenciaDaContaDestino != 0 && numeroDaContaDestino != 0 && agenciaDaContaOrigem != 0 && numeroDaContaOrigem != 0) {
+            if (this.saldo > 0) {
+                if(valor <= this.saldo) {
+                    this.saldo -= valor;
+                    System.out.println("Transferência realizada com sucesso! Seu novo saldo é de R$ " + this.saldo);
+                } else {
+                    System.out.println("Valor maior do que o saldo!");
+                }
             } else {
-                System.out.println("Valor maior do que o saldo!");
+                System.out.println("Saldo insuficiente! Por favor, deposite algum valor na conta.");
             }
-        } else {
-            System.out.println("Saldo insuficiente! Por favor, deposite algum valor na conta.");
         }
+
     }
 
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public void setNumero(int novoNumero) {
+        this.numero = novoNumero;
+    }
 
 }
