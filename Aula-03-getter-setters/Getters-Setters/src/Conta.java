@@ -52,12 +52,21 @@ public class Conta {
 
     }
 
+    //Getters e Setters
     public int getNumero() {
         return this.numero;
     }
 
     public void setNumero(int novoNumero) {
         this.numero = novoNumero;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
+    public Cliente getTitular() {
+        return titular;
     }
 
 }

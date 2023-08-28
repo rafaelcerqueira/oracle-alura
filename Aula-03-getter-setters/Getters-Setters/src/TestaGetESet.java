@@ -6,5 +6,9 @@ public class TestaGetESet {
 
         conta.setNumero(2024);
         System.out.println(conta.getNumero());
+
+        Cliente gohan = new Cliente();
+
+        conta.setTitular();
     }
 }
